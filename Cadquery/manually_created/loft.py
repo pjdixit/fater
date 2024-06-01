@@ -12,4 +12,4 @@ lofted_shape = (
 )
 
 
-cq.exporters.export(lofted_shape, "results/loft.stl")
+cq.exporters.export(lofted_shape, "results/loft.step")
