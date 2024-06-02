@@ -1,0 +1,20 @@
+import cadquery as cq
+
+result = (
+    cq.Workplane()
+    .box(5, 5, 1)
+    .faces(">Z")
+    .workplane()
+    .rarray(2, 2, 2, 2)
+    .rect(1.5, 1.5)
+    .extrude(0.5)
+    .faces(">Z")
+    .sketch()
+    .circle(0.4)
+    .wires()
+    .distribute(6)
+    .circle(0.1, mode="a")
+    .clean()
+    .finalize()
+    .cutBlind(-0.5, taper=10)
+)
